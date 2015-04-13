@@ -1,0 +1,42 @@
+setwd("~/R/RProjects/email_novidades/src/")
+library(ggplot2)
+source('db_connections.R')
+source('functions.R')
+library(RImpala)
+
+# Preciso add filtros
+# Modificar meu codigo para pegar dados do Impala
+setwd("~/R/RProjects/email_novidades/data")
+connection <- GetConnection()
+tables <- dbListTables()
+
+email_marketing_pacotes_ofertados <- GetEmailPacotesOfertados()
+
+outras_midias_pedidos_feitos_get_data <- GetTodasMidiasData()
+
+
+setwd("~/R/RProjects/email_novidades/data")
+outras_midias_pedidos_feitos <- read.csv("vendas.csv",sep = ',')
+#outras_midias_pedidos_feitos <- FiltrosMidiasPedidosFeitos(outras_midias_pedidos_feitos_get_data) 
+
+# Retorna True para todas os id que estão nas outra midias e não estão no email marketing
+outras_midias_pedidos_feitos$ofertas_email_marketing <- !(outras_midias_pedidos_feitos$oferta_id_oferta %in% 
+                                                          email_marketing_pacotes_ofertados$id_oferta)
+
+ofertas_nao_divulgadas_marketing <- subset(outras_midias_pedidos_feitos,
+                                    outras_midias_pedidos_feitos$ofertas_email_marketing != FALSE)
+
+sugestao_de_pacotes <- data.frame(table(ofertas_nao_divulgadas_marketing$id_oferta))
+sugestao_de_pacotes_maiores_cinco <- subset(sugestao_de_pacotes,sugestao_de_pacotes$Freq > 5)
+
+# Tests
+test <- dbSendQuery(connection, "SELECT TOP 10 * FROM oferta")
+test_resul <- dbFetch(test)
+View(test_resul)
+
+
+
+
+
+
+

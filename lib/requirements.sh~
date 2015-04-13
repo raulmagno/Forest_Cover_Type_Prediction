@@ -1,0 +1,13 @@
+Rscript -e "install.packages('ggplot2', repos='http://cran.stat.ucla.edu/')"
+Rscript -e "install.packages('dplyr', repos='http://cran.stat.ucla.edu/')"
+Rscript -e "install.packages('RImpala', repos='http://cran.stat.ucla.edu/')"
+Rscript -e "install.packages('RSQLServer', repos='http://cran.stat.ucla.edu/')"
+Rscript -e "install.packages('DBI', repos='http://cran.stat.ucla.edu/')"
+<<<<<<< HEAD
+Rscript -e "install.packages('sendmailR', repos='http://cran.stat.ucla.edu/')"
+=======
+Rscript -e "install.packages('recommenderlab', repos='http://cran.stat.ucla.edu/')"
+Rscript -e "install.packages('mailR', repos='http://cran.stat.ucla.edu/')"
+Rscript -e "install.packages('pander', repos='http://cran.stat.ucla.edu/')"
+>>>>>>> 250851f4b27efd0228d40e9231fa41e16fb617b3
+sudo apt-get install r-cran-rjava

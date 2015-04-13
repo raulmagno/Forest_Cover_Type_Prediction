@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+
+=======
+# Como setar projecto como root no R
+>>>>>>> 250851f4b27efd0228d40e9231fa41e16fb617b3
+
+
+# Como identificar um passeio
+
+# Perguntar BI só é válido pacote NO AR como sei quais os que estão no AR ?? Peguei query com Evendro tenho que add.
+
+
+
+########  Pacotes que ainda estão no AR #########
+# Tentar ver se consigo pegar no Banco do BI
+	# where o.estoque > o.qtd_venda_aprovada AND o.publicado = 2 AND o.data_inicio <= NOW() AND (o.data_fim >= NOW() OR o.data_fim IS NULL) 	AND o.id_oferta_tipo IN (1, 5) AND o.sw_oculto = 0 AND o.especial = 0 AND o.deletado = 0 AND ee.nome != "Malta";
+
+
+<<<<<<< HEAD
+# Documentar para ficar facil dar manutenção.
+# Fechar connecçoes no fim do script
+
+
+=======
+# Implementar Segundo Passo
+# Subir na AWS
+# Criar rotina para Enviar por email para Thiago
+
+
+
+# Organizar o Config
+    - Organizar conecção do impala.
+    - 
+>>>>>>> 250851f4b27efd0228d40e9231fa41e16fb617b3
+
+
+10939     44420 ES   17 - INVALIDO - DAY USE
+11776     45222 FL  221 - INVALIDO - PACOTE CRIADO PRA RELOCAÇÃO DE PAX
+19728     40948 RJ   12
+19779     41347 RJ   23 - INVALIDO - PASSEIO DE BARCO
+19815     42088 RJ   13 - INVALIDO - DAY USE
+2994      51375 07   11
+2999      51409 07   12
+

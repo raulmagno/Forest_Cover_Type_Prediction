@@ -1,0 +1,61 @@
+Random Forest 
+
+10584 samples
+   36 predictors
+    7 classes: '1', '2', '3', '4', '5', '6', '7' 
+
+No pre-processing
+Resampling: Bootstrapped (25 reps) 
+
+Summary of sample sizes: 10584, 10584, 10584, 10584, 10584, 10584, ... 
+
+Resampling results
+
+  Accuracy   Kappa    Accuracy SD  Kappa SD  
+  0.6994144  0.64938  0.01037559   0.01200079
+
+Tuning parameter 'mtry' was held constant at a value of 3
+ 
+> confusionMatrix(df_final_testing$pred,df_final_testing$Cover_Type)
+Confusion Matrix and Statistics
+
+          Reference
+Prediction   1   2   3   4   5   6   7
+         1 368 107   0   0  12   1  29
+         2 149 361   3   0  29   1  24
+         3  10   9 321   1  25  80   1
+         4   0   3 207 634   0 150   0
+         5  33 128  33   0 566  30  11
+         6  11  28  84  13  16 386   0
+         7  77  12   0   0   0   0 583
+
+Overall Statistics
+                                          
+               Accuracy : 0.7097          
+                 95% CI : (0.6962, 0.7228)
+    No Information Rate : 0.1429          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.6613          
+ Mcnemar's Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: 1 Class: 2 Class: 3 Class: 4 Class: 5
+Sensitivity           0.56790  0.55710  0.49537   0.9784   0.8735
+Specificity           0.96168  0.94702  0.96759   0.9074   0.9396
+Pos Pred Value        0.71180  0.63668  0.71812   0.6378   0.7066
+Neg Pred Value        0.93033  0.92769  0.92003   0.9960   0.9780
+Prevalence            0.14286  0.14286  0.14286   0.1429   0.1429
+Detection Rate        0.08113  0.07959  0.07077   0.1398   0.1248
+Detection Prevalence  0.11398  0.12500  0.09854   0.2191   0.1766
+Balanced Accuracy     0.76479  0.75206  0.73148   0.9429   0.9065
+                     Class: 6 Class: 7
+Sensitivity            0.5957   0.8997
+Specificity            0.9609   0.9771
+Pos Pred Value         0.7175   0.8676
+Neg Pred Value         0.9345   0.9832
+Prevalence             0.1429   0.1429
+Detection Rate         0.0851   0.1285
+Detection Prevalence   0.1186   0.1481
+Balanced Accuracy      0.7783   0.9384

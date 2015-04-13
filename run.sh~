@@ -1,0 +1,23 @@
+#!/bin/sh
+
+Rscript src/get_all_data.R
+Rscript src/main.R
+
+HOST='10.12.1.246'
+USER='hotelurbano'
+PASSWD='$d2112xxho'
+LOCALPATH='data_output/para_enviar/'
+FILE='*'
+DIR='.'
+
+ftp -n $HOST <<END_SCRIPT
+quote USER $USER
+quote PASS $PASSWD
+lcd $LOCALPATH
+put $FILE  
+quit
+END_SCRIPT
+
+mv data_output/para_enviar/* data_output/enviados/
+#rm data_output/*.csv
+
